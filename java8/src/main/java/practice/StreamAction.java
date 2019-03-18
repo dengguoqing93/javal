@@ -26,14 +26,21 @@ public class StreamAction {
 
     static List<Transaction> transactions =
             Arrays.asList(new Transaction(brian, 2011, 300),
-                    new Transaction(raoul, 2012, 1000),
-                    new Transaction(raoul, 2011, 400),
-                    new Transaction(mario, 2012, 710),
-                    new Transaction(mario, 2012, 700),
-                    new Transaction(alan, 2012, 950));
+                          new Transaction(raoul, 2012, 1000),
+                          new Transaction(raoul, 2011, 400),
+                          new Transaction(mario, 2012, 710),
+                          new Transaction(mario, 2012, 700),
+                          new Transaction(alan, 2012, 950));
 
     public static void main(String[] args) {
-        transactions.stream().filter(t -> t.getYear() == 2011)
+        Transaction transaction = new Transaction(brian, 2011, 90900);
+        Transaction reduce = transactions.stream().filter(t -> t.getValue() == 300).limit(
+                1).reduce(
+                transaction, (x, y) -> y);
+        System.out.println(reduce);
+
+
+        /*transactions.stream().filter(t -> t.getYear() == 2011)
                 .sorted(comparing(Transaction::getValue))
                 .forEach(t -> System.out.println("2011年的交易，交易金额为:" + t.getValue()));
 
@@ -49,7 +56,7 @@ public class StreamAction {
         String names = transactions.stream()
                 .map(transaction -> transaction.getTrader().getName()).distinct()
                 .sorted().collect(joining(","));
-        System.out.println(names);
+        System.out.println(names);*/
 
 
     }
