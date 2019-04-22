@@ -34,6 +34,8 @@ public class StreamProcess {
         Integer sum = numbers.stream().reduce(0, Integer::sum);
         System.out.println(sum);
 
+        threeHighCaloricDishNames.stream().distinct();
+
         Optional<Integer> sumOp = numbers.stream().reduce(Integer::sum);
         System.out.println(sumOp.get());
 
