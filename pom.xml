@@ -12,6 +12,8 @@
         <module>function</module>
         <module>multi-thread</module>
         <module>high-concurrency</module>
+        <module>mulity-thread-design</module>
+        <module>my-netty</module>
     </modules>
     <packaging>pom</packaging>
 
