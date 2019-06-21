@@ -6,7 +6,7 @@ import java.util.concurrent.RecursiveTask;
 import java.util.stream.LongStream;
 
 /**
- * ${DESCRIPTION}
+ * 分支/合并框架
  *
  * @author dengguoqing
  * @date 2018-10-19
@@ -53,8 +53,8 @@ public class ForkJoinSumCalculator extends RecursiveTask<Long> {
         return sum;
     }
 
-    public static long forkJoinSum(long n){
-        long[] numbers = LongStream.rangeClosed(1,n).toArray();
+    public static long forkJoinSum(long n) {
+        long[] numbers = LongStream.rangeClosed(1, n).toArray();
         ForkJoinTask<Long> task = new ForkJoinSumCalculator(numbers);
         return new ForkJoinPool().invoke(task);
     }

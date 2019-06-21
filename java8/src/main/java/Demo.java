@@ -1,8 +1,4 @@
-
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.nio.charset.Charset;
 
 
 /**
@@ -13,14 +9,8 @@ import java.util.List;
  */
 public class Demo {
     public static void main(String[] args) {
-        List list = new ArrayList();
-        list.stream().forEach(x -> System.out.println(x));
-        for (Object o : list) {
-            System.out.println(o);
-        }
-        Iterator iterator = list.iterator();
-        while (iterator.hasNext()){
-            System.out.println(iterator);
-        }
+        Charset gbk = Charset.forName("utf8");
+        System.out.println(gbk);
+
     }
 }

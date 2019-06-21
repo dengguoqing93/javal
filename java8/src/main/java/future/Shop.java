@@ -31,8 +31,8 @@ public class Shop {
         long invocationTime = (System.nanoTime() - start) / 1000000;
         System.out.println("Invocation returned after " + invocationTime + " msecs");
         try {
-            //double price = futurePrice.get();
-            System.out.printf(futurePrice.toString());
+            double price = futurePrice.get();
+            System.out.println("Price is " + price);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
