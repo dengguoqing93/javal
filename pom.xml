@@ -15,6 +15,7 @@
         <module>mulity-thread-design</module>
         <module>my-netty</module>
         <module>multi-thread-action-guide</module>
+        <module>refactor</module>
     </modules>
     <packaging>pom</packaging>
 

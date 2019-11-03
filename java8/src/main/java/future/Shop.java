@@ -15,6 +15,16 @@ public class Shop {
 
     private Random random = new Random();
 
+    private String name;
+
+    public Shop(String name) {
+        this.name = name;
+    }
+
+    public Shop() {
+        this.name = "default";
+    }
+
     public static void delay() {
         try {
             Thread.sleep(1000L);
@@ -23,26 +33,13 @@ public class Shop {
         }
     }
 
-    public static void main(String[] args) {
-        Shop shop = new Shop();
-        long start = System.nanoTime();
-        CompletableFuture.runAsync(() -> System.out.println("开始任务"));
-        Future<Double> futurePrice = shop.getPriceAsync("my favorite product");
-        long invocationTime = (System.nanoTime() - start) / 1000000;
-        System.out.println("Invocation returned after " + invocationTime + " msecs");
-        try {
-            double price = futurePrice.get();
-            System.out.println("Price is " + price);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        long retrievalTime = (System.nanoTime() - start) / 1000000;
-        System.out.println("Price returned after " + retrievalTime + "msecs");
 
-    }
+    public String getPrice(String product) {
+        double price = calculatePrice(product);
 
-    public double getPrice(String product) {
-        return calculatePrice(product);
+        Discount.Code code = Discount.Code.values()[random.nextInt(
+                Discount.Code.values().length)];
+        return String.format("%s:%.2f:%s", name, price, code);
     }
 
     public Future<Double> getPriceAsync(String product) {
@@ -52,5 +49,9 @@ public class Shop {
     private double calculatePrice(String product) {
         delay();
         return random.nextDouble() * product.charAt(0) + product.charAt(1);
+    }
+
+    public String getName() {
+        return name;
     }
 }
