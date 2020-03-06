@@ -1,4 +1,4 @@
-package com.guo.netty.server;
+package org.spiral.netty.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

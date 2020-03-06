@@ -24,6 +24,7 @@ public class Discount {
     }
 
     public static String applyDiscount(Quote quote) {
+        Number l = Integer.MAX_VALUE;
         return quote.getShopName() + " price is " + Discount.apply(
                 quote.getPrice(), quote.getDiscountCoe());
     }

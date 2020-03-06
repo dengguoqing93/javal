@@ -1,4 +1,4 @@
-package com.guo.netty.client;
+package org.spiral.netty.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
