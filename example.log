@@ -1,0 +1,3 @@
+INFO main org.spiral.nio.demo.file.FileNIOCopyDemo - srcPath:/Users/dengguoqing/IdeaProjects/javal/my-netty/src/main/resources/test.txt
+INFO main org.spiral.nio.demo.file.FileNIOCopyDemo - destPath:/Users/dengguoqing/IdeaProjects/javal/my-netty/src/main/resources/test1.txt
+INFO main org.spiral.nio.demo.file.FileNIOCopyDemo - base复制毫秒数:20
